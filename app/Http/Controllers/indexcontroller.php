@@ -110,11 +110,4 @@ return redirect('/userlogin')->with('error', 'invalid  username or Password');
 }
 }
 
-
-
-
-
-
-
-
 }

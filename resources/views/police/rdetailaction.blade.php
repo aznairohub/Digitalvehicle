@@ -8,22 +8,22 @@
                 <table class="table table-hover text-nowrap">
                   <thead>
                     <tr>
-                    <th bgcolor="green">id</th>
-                    <th bgcolor="green">name</th>
-                   <th bgcolor="green">rto</th>
-                    <th bgcolor="green">model</th>
-                    <th bgcolor="green">class</th>
-                    <th bgcolor="green"> fuel</th>
-                     <th bgcolor="green">eno</th>
-                    <th bgcolor="green">cno</th>
-                <th bgcolor="green">regdate</th>
-                <th bgcolor="green">fit</th>
-                <th bgcolor="green">expiry</th>
-                <th bgcolor="green">regnumber</th>
-                <th bgcolor="green">color</th>
-                <th bgcolor="green">unload</th>
-                <th bgcolor="green">edit</th>
-                <th bgcolor="green">delete</th>
+                    <th >id</th>
+                    <th >name</th>
+                   <th >rto</th>
+                    <th >model</th>
+                    <th >class</th>
+                    <th > fuel</th>
+                     <th >eno</th>
+                    <th >cno</th>
+                <th >regdate</th>
+                <th >fit</th>
+                <th >expiry</th>
+                <th >regnumber</th>
+                <th >color</th>
+                <th >unload</th>
+                <th >edit</th>
+                <th >delete</th>
 
 
 

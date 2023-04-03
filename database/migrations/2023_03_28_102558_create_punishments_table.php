@@ -15,8 +15,10 @@ return new class extends Migration
     {
         Schema::create('punishments', function (Blueprint $table) {
             $table->id();
+            $table->string('dlid');
             $table->string('first');
             $table->string('second');
+            $table->string('status')->default('Not Completed');
             $table->timestamps();
         });
     }

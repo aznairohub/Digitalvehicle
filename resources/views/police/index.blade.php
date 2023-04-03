@@ -1,80 +1,6 @@
 @extends('police.police_header')
 @section('police_body')
-      <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Dashboard
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="/police" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v1</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
-              <p>
-                PUNISHMENT
-                <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">6</span>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="/addpunishment" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>ADD PUNISHMENT</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/viewpunishment" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>VIEW PUNISHMENT</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-
-          <li class="nav-item">
-          <li class="nav-item">
-            <a href="viewrcbook" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
-              <p>
-                VIEW RC BOOK
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="/viewlisence" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
-              <p>
-                VIEW LISENCE
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-          </li>
-
-
-
-          </li>
-              </li>
-          </li>
-      <!-- /.sidebar-menu -->
-    </div>
-    <!-- /.sidebar -->
-  </aside>
+      
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -83,14 +9,9 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Dashboard</h1>
+            <h1 class="m-0"> POLICE Dashboard</h1>
           </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v1</li>
-            </ol>
-          </div><!-- /.col -->
+          
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>

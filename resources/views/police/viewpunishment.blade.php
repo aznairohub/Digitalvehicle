@@ -9,11 +9,14 @@
                 <table class="table table-hover text-nowrap">
                   <thead>
                     <tr>
-                    <th bgcolor="green">id</th>
-                    <th bgcolor="green">punishment</th>
-                    <th bgcolor="green">reason</th>
-                <th bgcolor="green">edit</th>
-                <th bgcolor="green">delete</th>
+                    <th >ID</th>
+                    <th >Username</th>
+                    <th >DL Number</th>
+                    
+                    <th >Reason</th>
+                    <th >Punishment</th>
+                    <th >Status</th>
+                <th >Change Status</th>
 
                 </tr>
                   </thead>
@@ -22,10 +25,12 @@
 
                     <tr>
                     <td>{{$value->id}}</td>
+                    <td>{{$value->username}}</td>
+                    <td>{{$value->dlno}}</td>
                     <td>{{$value->first}}</td>
                     <td>{{$value->second}}</td>
-                <td><a href="/editpunishment/{{$value->id}}">EDIT</a></td>
-                <td><a href="/deletepunishment/{{$value->id}}">delete</a></td>
+                    <td>{{$value->status}}</td>
+                <td><a href="/changestatus/{{$value->id}}">Change</a></td>
 
                     </tr>
                     @endforeach

@@ -1,7 +1,7 @@
 @extends('admin.admin_header')
 @section('admin_body')
 <div class="row">
- <div class="col-2"></div>
+ <div class="col-md-2"></div>
           <div class="col-md-10">
 
               <!-- /.card-header -->
@@ -9,10 +9,10 @@
                 <table class="table table-hover text-nowrap">
                   <thead>
                     <tr>
-                    <th bgcolor="green">id</th>
-                    <th bgcolor="green"> name</th>
-                    <th bgcolor="green">password</th>
-                    <th bgcolor="green"> email</th>
+                    <th >id</th>
+                    <th > name</th>
+                    <th >password</th>
+                    <th > email</th>
                 </tr>
                   </thead>
                   <tbody>

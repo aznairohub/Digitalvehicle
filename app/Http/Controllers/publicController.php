@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\punishment;
 use App\Models\registration;
+use App\Models\addlisence;
 use Illuminate\Http\Request;
 
 class publicController extends Controller
@@ -45,7 +46,19 @@ class publicController extends Controller
         return view('public.myprofile',$data);
 
    } 
+   public function usersearchlicence(Request $req)
+   {
+       $licence = $req->input('query');
+       if ($licence != " ") {
 
+           $records = addlisence::where('dlno', 'LIKE', '%' . $licence . '%')->get();
+           return response()->json($records);
+       }
+   }
+   public function lisence ()
+   {
+return view('public.lisence');
+   }
 
 
 

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 31, 2023 at 04:57 PM
+-- Generation Time: Apr 03, 2023 at 09:58 AM
 -- Server version: 10.4.27-MariaDB
--- PHP Version: 8.0.25
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,6 +37,7 @@ CREATE TABLE `addlisences` (
   `cat` varchar(255) NOT NULL,
   `vf` varchar(255) NOT NULL,
   `vt` varchar(255) NOT NULL,
+  `dlno` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -45,8 +46,9 @@ CREATE TABLE `addlisences` (
 -- Dumping data for table `addlisences`
 --
 
-INSERT INTO `addlisences` (`id`, `username`, `sof`, `address`, `dob`, `bg`, `cat`, `vf`, `vt`, `created_at`, `updated_at`) VALUES
-(2, 'unni v', 'vijayan', 'valiyathu thekkethil', '20222-04-04', 'A+', 'transport', '5000-06-06', '5000-06-06', NULL, '2023-03-20 05:11:39');
+INSERT INTO `addlisences` (`id`, `username`, `sof`, `address`, `dob`, `bg`, `cat`, `vf`, `vt`, `dlno`, `created_at`, `updated_at`) VALUES
+(1, 'azna', 'muneer', 'sadasdsa', '2000-09-12', 'o+ve', 'dwsefdsf', '42323-02-23', '3232-02-23', '1234', NULL, NULL),
+(2, '2323', '343433', '3434', '43432-03-31', '34234', '34234', '2322-02-12', '2333-03-12', '24343', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -71,16 +73,16 @@ CREATE TABLE `addrcbooks` (
   `color` varchar(255) NOT NULL,
   `unload` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `STATUS` varchar(100) NOT NULL DEFAULT 'upload pending'
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `addrcbooks`
 --
 
-INSERT INTO `addrcbooks` (`id`, `name`, `rto`, `model`, `class`, `fuel`, `eno`, `cno`, `regdate`, `fit`, `expiry`, `expin`, `regnumber`, `color`, `unload`, `created_at`, `updated_at`, `STATUS`) VALUES
-(2, 'AISWARYA V', 'KL 07', 'TATA', '2', 'Petrol', '111', '1111', '2020-05-12', '2020-06-12', '2023-01-12', '2025-02-12', '12366', 'green', '6', NULL, NULL, 'upload pending');
+INSERT INTO `addrcbooks` (`id`, `name`, `rto`, `model`, `class`, `fuel`, `eno`, `cno`, `regdate`, `fit`, `expiry`, `expin`, `regnumber`, `color`, `unload`, `created_at`, `updated_at`) VALUES
+(1, 'azna', 'kl07', '123', '2', 'petrol', '2324355', '3453454', '2020-04-12', '2045-05-12', '2023-03-12', '2024-03-12', '123456789', 'black', '2', NULL, NULL),
+(2, 'krish', 'kl07', 'qwerty', 'qwerty', 'qwerty', '234234', '34334', '2222-03-31', '1222-02-23', '1323-02-23', '0032-02-23', '232313', '232312', '23234', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -115,16 +117,16 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(11, '2014_10_12_000000_create_users_table', 1),
-(12, '2014_10_12_100000_create_password_resets_table', 1),
-(13, '2019_08_19_000000_create_failed_jobs_table', 1),
-(14, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(15, '2023_03_14_093811_create_addrcbooks_table', 1),
-(19, '2023_03_17_093704_create_addlisences_table', 2),
-(22, '2023_03_21_110029_create_msgs_table', 3),
-(24, '2023_03_23_094059_create_registrations_table', 4),
-(26, '2023_03_28_102558_create_punishments_table', 5),
-(30, '2023_03_29_091704_create_policeregs_table', 6);
+(31, '2014_10_12_000000_create_users_table', 1),
+(32, '2014_10_12_100000_create_password_resets_table', 1),
+(33, '2019_08_19_000000_create_failed_jobs_table', 1),
+(34, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(35, '2023_03_14_093811_create_addrcbooks_table', 1),
+(36, '2023_03_17_093704_create_addlisences_table', 1),
+(37, '2023_03_21_110029_create_msgs_table', 1),
+(47, '2023_03_23_094059_create_registrations_table', 2),
+(48, '2023_03_28_102558_create_punishments_table', 2),
+(49, '2023_03_29_091704_create_policeregs_table', 2);
 
 -- --------------------------------------------------------
 
@@ -141,13 +143,6 @@ CREATE TABLE `msgs` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `msgs`
---
-
-INSERT INTO `msgs` (`id`, `first`, `second`, `third`, `msg`, `created_at`, `updated_at`) VALUES
-(1, 'aaa', 'aaa@123', 'aaaaaaa', '1111', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -195,13 +190,6 @@ CREATE TABLE `policeregs` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `policeregs`
---
-
-INSERT INTO `policeregs` (`id`, `username`, `password`, `email`, `created_at`, `updated_at`) VALUES
-(1, 'jithu', 'jithu', 'jithu@234', NULL, NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -210,8 +198,10 @@ INSERT INTO `policeregs` (`id`, `username`, `password`, `email`, `created_at`, `
 
 CREATE TABLE `punishments` (
   `id` bigint(20) UNSIGNED NOT NULL,
+  `dlid` varchar(255) NOT NULL,
   `first` varchar(255) NOT NULL,
   `second` varchar(255) NOT NULL,
+  `status` varchar(255) NOT NULL DEFAULT 'Not Completed',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -220,10 +210,8 @@ CREATE TABLE `punishments` (
 -- Dumping data for table `punishments`
 --
 
-INSERT INTO `punishments` (`id`, `first`, `second`, `created_at`, `updated_at`) VALUES
-(1, 'aaa', 'aaaaa', NULL, NULL),
-(2, '500 rs fine', 'helmet not wearing', NULL, NULL),
-(3, '500 rs fine', 'helmet not wearing', NULL, NULL);
+INSERT INTO `punishments` (`id`, `dlid`, `first`, `second`, `status`, `created_at`, `updated_at`) VALUES
+(1, '1', '\'Not Completed\'', '\'Not Completed\'', 'Not Completed', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -250,9 +238,7 @@ CREATE TABLE `registrations` (
 --
 
 INSERT INTO `registrations` (`id`, `name`, `address`, `dob`, `bg`, `hgt`, `wgt`, `username`, `psd`, `created_at`, `updated_at`) VALUES
-(1, 'AISWARYA V', 'valiyathu', '2000-04-04', 'A+', '150', '60', 'ammu', 'ammu', NULL, NULL),
-(2, 'shyam', 'mampallithekkethil', '1998-12-18', 'o+', '167', '52', 'shyam', 'shyam', NULL, NULL),
-(3, 'jithu', 'valiyathu', '2000-02-02', 'A+', '163', '59', 'jithu', 'jithu', NULL, NULL);
+(1, 'azna', 'aaaaa', '2000-04-12', 'O+ve', '156', '49', 'azna', 'azna', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -371,13 +357,13 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `msgs`
 --
 ALTER TABLE `msgs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -389,19 +375,19 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `policeregs`
 --
 ALTER TABLE `policeregs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `punishments`
 --
 ALTER TABLE `punishments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `registrations`
 --
 ALTER TABLE `registrations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`

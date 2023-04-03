@@ -7,15 +7,15 @@
                 <table class="table table-hover text-nowrap">
                   <thead>
                     <tr>
-                    <th bgcolor="green">id</th>
-                    <th bgcolor="green">name</th>
-                   <th bgcolor="green">address</th>
-                    <th bgcolor="green">dob</th>
-                    <th bgcolor="green">blood group</th>
-                     <th bgcolor="green">height</th>
-                    <th bgcolor="green">weight </th>
-                <th bgcolor="green">username</th>
-                <th bgcolor="green">password</th>
+                    <th >id</th>
+                    <th >name</th>
+                   <th >address</th>
+                    <th >dob</th>
+                    <th >blood group</th>
+                     <th >height</th>
+                    <th >weight </th>
+                <th >username</th>
+                <th >password</th>
 
                 </tr>
                   </thead>

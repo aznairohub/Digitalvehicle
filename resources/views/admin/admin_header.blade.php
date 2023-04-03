@@ -97,7 +97,7 @@
                 <p>
                   RC BOOK DETAILS
                   <i class="fas fa-angle-left right"></i>
-                  <span class="badge badge-info right">6</span>
+                  
                 </p>
               </a>
               <ul class="nav nav-treeview">
@@ -189,15 +189,7 @@
               </ul>
 
             </li>
-            <li class="nav-item">
-              <a href="viewinssurance" class="nav-link">
-                <i class="nav-icon fas fa-tree"></i>
-                <p>
-                  VIEW INSSURANCE
-                  <i class="fas fa-angle-left right"></i>
-                </p>
-              </a>
-            </li>
+          
             <li class="nav-item">
               <a href="viewprofile" class="nav-link">
                 <i class="nav-icon fas fa-tree"></i>

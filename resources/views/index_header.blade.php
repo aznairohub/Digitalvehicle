@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -53,20 +52,17 @@
 
 
     <!-- Navbar & Carousel Start -->
-    <div class="container-fluid position-relative p-0">
+    <div class="container-fluid position-relative">
         <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
-            <a href="index.html" class="navbar-brand p-0">
-                <h1 class="m-0"><i class="fa fa-user-tie me-2"></i>Startup</h1>
-            </a>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="/index" class="nav-item nav-link active">Home</a>
+                    <a href="/" class="nav-item nav-link active">Home</a>
                     <a href="/about" class="nav-item nav-link">About</a>
                     <a href="/contact" class="nav-item nav-link">Contact</a>
-                    <a href="/complaint" class="nav-item nav-link">Complaints</a>
                     <a href="/registration" class="nav-item nav-link">Registration</a>
                     <a href="/userlogin" class="nav-item nav-link">Login</a>
                 </div>
@@ -79,89 +75,29 @@
                     <img class="w-100" src="img/carousel-1.jpg" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
+                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">Digital Vehicle</h1>
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <img class="w-100" src="img/carousel-2.jpg" alt="Image">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px;">
-                        </div>
-                    </div>
-                </div>
-            </div>
 
+            </div>
         </div>
     </div>
     <!-- Navbar & Carousel End -->
 
 
-    <!-- Full Screen Search Start -->
-
-    <!-- Full Screen Search End -->
-
-
-    <!-- Facts Start -->
-
-    <!-- Facts Start -->
-
-
-    <!-- About Start -->
-
-    <!-- About End -->
-
-
-    <!-- Features Start -->
-
-    <!-- Features Start -->
-
-
-    <!-- Service Start -->
-
-    <!-- Service End -->
-
-
-    <!-- Pricing Plan Start -->
-
-    <!-- Pricing Plan End -->
-
-
-    <!-- Quote Start -->
-
-    <!-- Quote End -->
-
-
-    <!-- Testimonial Start -->
-
-    <!-- Testimonial End -->
-
-
-    <!-- Team Start -->
-
-    <!-- Team End -->
-
-
-    <!-- Blog Start -->
-
-    <!-- Blog Start -->
-
-
-    <!-- Vendor Start -->
-
-    <!-- Vendor End -->
-    
+    @yield('index_body')
 
     <!-- Footer Start -->
-
     <div class="container-fluid text-white" style="background: #061429;">
         <div class="container text-center">
-            <div class="row justify-content-end">
+            <div class="row justify-content-center">
                 <div class="col-lg-8 col-md-6">
                     <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
-                        <p class="mb-0">&copy; <a class="text-white border-bottom" href="#">Your Site Name</a>. All Rights Reserved. 
-						
-						<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-						Designed by <a class="text-white border-bottom" href="https://htmlcodex.com">HTML Codex</a></p>
+                        <p class="mb-0">&copy; <a class="text-white border-bottom" href="/">Digital Vehicle</a>
+                        . All Rights Reserved.
+
+                        </p>
                     </div>
                 </div>
             </div>
@@ -177,14 +113,14 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/lib/wow/wow.min.js"></script>
-    <script src="/lib/easing/easing.min.js"></script>
-    <script src="/lib/waypoints/waypoints.min.js"></script>
-    <script src="/lib/counterup/counterup.min.js"></script>
-    <script src="/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="/js/main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

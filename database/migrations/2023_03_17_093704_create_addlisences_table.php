@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('cat');
             $table->string('vf');
             $table->string('vt');
-
+            $table->string('dlno');
             $table->timestamps();
         });
     }

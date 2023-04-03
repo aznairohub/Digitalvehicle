@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="row">
             <!-- left column -->
-            <div class="col-sm-3"></div>
+            <div class="col-sm-2"></div>
             <div class="col-md-9">
                 <!-- general form elements -->
                 <div class="card card-primary">
@@ -18,61 +18,61 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="name">OWNER NAME</label>
-                                <input type="text" name="name" id="name">
+                                <input type="text" class="form-control" name="name" id="name">
                             </div>
                             <div class="form-group">
                                 <label for="rto">REGISTERED RTO</label>
-                                <input type="text" name="rto" id="rto">
+                                <input type="text" class="form-control" name="rto" id="rto">
                             </div>
                             <div class="form-group">
                                 <label for="model">MAKERMODEL</label>
-                                <input type="text" name="model" id="model">
+                                <input type="text" class="form-control" name="model" id="model">
                             </div>
                             <div class="form-group">
 
                                 <label for="class">VEHICLE CLASS</label>
-                                <input type="text" name="class" id="class">
+                                <input type="text" class="form-control" name="class" id="class">
                             </div>
                             <div class="form-group">
                                 <label for="fuel">FUEL_NORMS</label>
-                                <input type="text" name="fuel" id="fuel">
+                                <input type="text" class="form-control" name="fuel" id="fuel">
                             </div>
                             <div class="form-group">
                                 <label for="eno">ENGINE NUMBER</label>
-                                <input type="text" name="eno" id="eno">
+                                <input type="text" class="form-control" name="eno" id="eno">
                             </div>
                             <div class="form-group">
 
                                 <label for="cno">CHASSIS NUMBER</label>
-                                <input type="text" name="cno" id="cno">
+                                <input type="text" class="form-control" name="cno" id="cno">
                             </div>
                             <div class="form-group">
                                 <label for="regdate">REGISTRATION DATE</label>
-                                <input type="date" name="regdate" id="regdate">
+                                <input type="date" class="form-control" name="regdate" id="regdate">
                             </div>
                             <div class="form-group">
                                 <label for="fit">FITNESS UPTO</label>
-                                <input type="date" name="fit" id="fit">
+                                <input type="date" class="form-control" name="fit" id="fit">
                             </div>
                             <div class="form-group">
                                 <label for="expiry">INSSURANCE_EXPIRY</label>
-                                <input type="date" name="expiry" id="expiry">
+                                <input type="date" class="form-control" name="expiry" id="expiry">
                             </div>
                             <div class="form-group">
                                 <label for="expin">INSUSURANCE EXPIRY IN</label>
-                                <input type="date" name="expin" id="expin">
+                                <input type="date" class="form-control" name="expin" id="expin">
                             </div>
                             <div class="form-group">
                                 <label for="regnumber">REGISTRATION NUMBER</label>
-                                <input type="text" name="regnumber" id="regnumber">
+                                <input type="text" class="form-control" name="regnumber" id="regnumber">
                             </div>
                             <div class="form-group">
                                 <label for="color">COLOR</label>
-                                <input type="text" name="color" id="color">
+                                <input type="text" class="form-control" name="color" id="color">
                             </div>
                             <div class="form-group">
                                 <label for="unload">UNLOADED WEIGHT</label>
-                                <input type="text" name="unload" id="unload">
+                                <input type="text" class="form-control" name="unload" id="unload">
                             </div>
 
 
@@ -81,7 +81,7 @@
                         <!-- /.card-body -->
 
                         <div class="card-footer">
-                            <button type="submit" name="register" id="register">Register</button>
+                            <button type="submit" name="register" class="btn btn-primary btn-block" id="register">Register</button>
                         </div>
 
                     </form>

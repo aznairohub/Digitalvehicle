@@ -7,13 +7,13 @@
               <!-- /.card-header -->
               <div class="card-body table-responsive p-0">
                 <table class="table table-hover text-nowrap">
-                  <thead>
+                  <thead class="bg-warning">
                     <tr>
-                    <th bgcolor="green">id</th>
-                    <th bgcolor="green">your name</th>
-                    <th bgcolor="green">your email</th>
-                    <th bgcolor="green">Subject</th>
-                    <th bgcolor="green">message</th>
+                    <th >id</th>
+                    <th >your name</th>
+                    <th >your email</th>
+                    <th >Subject</th>
+                    <th >message</th>
                 </tr>
                   </thead>
                   <tbody>

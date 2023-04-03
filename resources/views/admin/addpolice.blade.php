@@ -19,15 +19,15 @@
                             <div class="form-group">
                                 
                                 <label for="username">USER NAME</label>
-                                <input type="text" name="username" id="username">
+                                <input type="text"  class="form-control" name="username" id="username">
                             </div>
                             <div class="form-group">
                                 <label for="password">PASSWORD</label>
-                                <input type="password" name="password" id="password">
+                                <input type="password"  class="form-control" name="password" id="password">
                             </div>
                             <div class="form-group">
                                 <label for="email">EMAIL ID</label>
-                                <input type="email" name="email" id="email">
+                                <input type="email"  class="form-control" name="email" id="email">
                             </div>
 
 
@@ -36,7 +36,7 @@
                         <!-- /.card-body -->
 
                         <div class="card-footer">
-                            <button type="submit" name="register" id="register">Register</button>
+                            <button type="submit" name="register" class="btn btn-primary btn-block" id="register">Register</button>
                         </div>
 
                     </form>

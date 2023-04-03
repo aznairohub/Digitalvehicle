@@ -9,11 +9,11 @@
                 <table class="table table-hover text-nowrap">
                   <thead>
                     <tr>
-                    <th bgcolor="green">id</th>
-                    <th bgcolor="green">punishment</th>
-                    <th bgcolor="green">reason</th>
-                <th bgcolor="green">edit</th>
-                <th bgcolor="green">delete</th>
+                    <th >id</th>
+                    <th >punishment</th>
+                    <th >reason</th>
+                <th >edit</th>
+                <th >delete</th>
 
                 </tr>
                   </thead>

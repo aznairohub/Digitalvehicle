@@ -1,31 +1,33 @@
+@extends('index_header')
+@section('index_body')
 <section class="content">
     <div class="container-fluid">
-        <div class="row" >
+        <div class="row my-5" >
             <!-- left column -->
-            <div class="col-2"></div>
-            <div class="col-9">
+            <div class="col-4"></div>
+            <div class="col-4">
                 <!-- general form elements -->
                 <div class="card card-primary">
                     <div class="card-header">
                         <h3 class="card-title">LOGIN</h3>
                     </div>
 
-                    <form action="/userloginaction" method="post">
+                    <form action="/userloginaction" method="post" >
                         @csrf
                         <div class="card-body" >
                             <div class="form-group">
                             <label for="username" >USER NAME:</label>
-                            <input type="text" name="username" id="username">
+                            <input type="text" name="username" id="username"  class="form-control">
                             </div>
                             <div class="form-group">
                             <label for="password">PASSWORD</label>
-                           <input type="password" name="password" id="psd">
+                           <input type="password" name="password" id="psd"  class="form-control">
                             </div>
 
                         </div>
 
                         <div class="card-footer" >
-                        <button type="submit" name="register" id="register">Register</button>
+                        <button type="submit" name="register" class="btn btn-block btn-primary w-100" id="register">Register</button>
                         </div>
                         
                     </form>
@@ -38,6 +40,7 @@
         </div>
     </div>
 </section>
+@endsection
 
 
 

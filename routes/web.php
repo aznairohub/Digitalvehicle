@@ -18,6 +18,9 @@ use App\Http\Controllers\insuranceController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+
 Route::get('/',[indexcontroller::class,'index']);
 Route::get('/contact',[indexController::class,'contact']);
 Route::post('/contactaction',[indexController::class,'contactaction']);
@@ -27,12 +30,6 @@ Route::post('/registrationaction',[indexController::class,'registrationaction'])
 Route::get('/about',[indexController::class,'about']);
 Route::get('/userlogin',[indexcontroller::class,'userlogin']);
 Route::post('/userloginaction',[indexcontroller::class,'userloginaction']);
-
-
-
-
-
-
 
 
 
@@ -63,61 +60,29 @@ Route::get('/adminlogin',[adminController::class,'adminlogin']);
 Route::post('/adminloginaction',[adminController::class,'adminloginaction']);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Route::get('/police',[policeController::class,'index']);
 Route::get('/addpunishment',[policeController::class,'addpunishment']);
 Route::get('/ppunishment',[policeController::class,'ppunishment']);
-Route::post('/punishmentaction',[policeController::class,'punishmentaction']);
+Route::post('/punishmentaction/{id}',[policeController::class,'punishmentaction']);
 Route::get('/viewpunishment',[policeController::class,'viewpunishment']);
 Route::get('/viewrdetails',[policeController::class,'viewrdetails']);
-// Route::post('/rdetailactions',[policeController::class,'rdetailactions']);
+Route::get('/viewldetails',[policeController::class,'viewldetails']);
+Route::get('/ppunishment/{id}',[policeController::class,'ppunishment']);
 Route::get('/logout',[policeController::class,'logout']);
-Route::post('/searchRC',[policeController::class,'searchRc']);
+Route::get('/searchRC',[policeController::class,'searchRc']);
+Route::get('/searchlicence',[policeController::class,'searchlicence']);
 Route::get('/login',[policeController::class,'login']);
 Route::post('/ploginaction',[policeController::class,'ploginaction']);
 Route::get('/policeprofile',[policeController::class,'policeprofile']);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 Route::get('/public',[publicController::class,'user']);
 Route::get('/rcbook',[publicController::class,'rcbook']);
 Route::get('/lisence',[publicController::class,'lisence']);
-
+Route::get('/usersearchlicence',[publicController::class,'usersearchlicence']);
+Route::get('/punishment',[publicController::class,'punishment']);
 Route::get('/myprofile',[publicController::class,'myprofile']);
 
-Route::get('/pubpunishment',[publicController::class,'pubpunishment']);
-Route::get('/userlogin',[publicController::class,'userlogin']);
-Route::post('/loginaction',[publicController::class,'loginaction']);
 
 
 
@@ -129,7 +94,13 @@ Route::post('/loginaction',[publicController::class,'loginaction']);
 
 
 
-Route::get('/insurance',[insuranceController::class,'insurance']);
+
+
+
+
+
+
+
 
 
 
