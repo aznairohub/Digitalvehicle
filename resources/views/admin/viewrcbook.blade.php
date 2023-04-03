@@ -1,13 +1,13 @@
 @extends('admin.admin_header')
 @section('admin_body')
-<div class="row">
+<div class="row py-5">
  <div class="col-2"></div>
           <div class="col-md-10">
 
               <!-- /.card-header -->
               <div class="card-body table-responsive p-0">
                 <table class="table table-hover text-nowrap">
-                  <thead>
+                  <thead class="bg-warning">
                     <tr>
                     <th >id</th>
                     <th >name</th>
