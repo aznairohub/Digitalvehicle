@@ -21,21 +21,20 @@
                     <tr>
 
                         <th>ID</th>
-                        <th>RC Owner Name</th>
-                        <th>RTO</th>
-                        <th>Vehicle Model</th>
-                        <th>Vehicle Class</th>
-                        <th>Fuel Type</th>
-                        <th>Engine Number</th>
-                        <th>Chassis Number</th>
-                        <th>Registration Date</th>
-                        <th>fitness</th>
-                        <th>Inssurance Expiry</th>
-                        <th>Inssurance Expiry In</th>
-                        <th>Regstration Number</th>
-                        <th>Vehicle Color</th>
-                        <th>Unload</th>
-
+                        <th>NAME</th>
+                        <th>REGIONAL TRANSPORT OFFICE</th>
+                        <th>VEHICLE MODEL</th>
+                        <th>VEHICLE CLASS</th>
+                        <th> FUEL NORMS</th>
+                        <th>ENGINE NUMBER</th>
+                        <th>CHASSIS NUMBER</th>
+                        <th>REGISTRATION DATE</th>
+                        <th>FITNESS</th>
+                        <th>INSSURANCE EXPIRY</th>
+                        <th>INSSURANCE EXPIRY IN</th>
+                        <th>REGISTRATION NUMBER</th>
+                        <th>COLOR</th>
+                        <th>UNLOAD</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -55,7 +54,6 @@
                         <td>{{$value->expin}}</td>
                         <td>{{$value->regnumber}}</td>
                         <td>{{$value->color}}</td>
-
                         <td>{{$value->unload}}</td>
                     </tr>
                     @endforeach

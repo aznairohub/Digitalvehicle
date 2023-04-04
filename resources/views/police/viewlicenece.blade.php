@@ -19,16 +19,17 @@
                 <thead class=bg-warning>
 
                     <tr>
-                        <th>id</th>
-                        <th>name</th>
-                        <th>DL number</th>
-                        <th>sof</th>
-                        <th>address</th>
-                        <th>dob</th>
-                        <th>blood group</th>
-                        <th>category</th>
-                        <th>valid from</th>
-                        <th>valid to</th>
+                        <th>ID</th>
+                        <th>NAME</th>
+                        <th>DL NUMBER</th>
+                        <th>S/D/W OF</th>
+                        <th>ADDRESS</th>
+                        <th>DOB</th>
+                        <th>BLOOD GROUP</th>
+                        <th>CATEGORY</th>
+                        <th>VALID FROM</th>
+                        <th>VALID TO</th>
+                        <th>ADD PUNISHMENT</th>
                     </tr>
                 </thead>
                 <tbody>

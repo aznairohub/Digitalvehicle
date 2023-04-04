@@ -9,10 +9,10 @@
                 <table class="table table-hover text-nowrap">
                   <thead>
                     <tr>
-                    <th >id</th>
-                    <th > name</th>
-                    <th >password</th>
-                    <th > email</th>
+                    <th >ID</th>
+                    <th > NAME</th>
+                    <th >PASSWORD</th>
+                    <th > EMAIL</th>
                 </tr>
                   </thead>
                   <tbody>

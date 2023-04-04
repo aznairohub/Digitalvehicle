@@ -9,17 +9,17 @@
       <table class="table table-hover text-nowrap">
         <thead class="bg-warning">
           <tr>
-            <th >id</th>
-            <th >name</th>
-            <th >sof</th>
-            <th >address</th>
-            <th >dob</th>
-            <th >blood group</th>
-            <th >category</th>
-            <th >valid from</th>
-            <th >valid to</th>
-            <th >edit</th>
-            <th >delete</th>
+            <th >ID</th>
+            <th >NAME</th>
+            <th >S/D/W OF</th>
+            <th >ADDRESS</th>
+            <th >DOB</th>
+            <th >BLOOD GROUP</th>
+            <th >CATEGORY</th>
+            <th >VALID FROM</th>
+            <th >VALID TO</th>
+            <th >EDIT</th>
+            <th >DELETE</th>
 
           </tr>
         </thead>
@@ -37,7 +37,7 @@
             <td>{{$value->vf}}</td>
             <td>{{$value->vt}}</td>
             <td><a href="/editlisence/{{$value->id}}">EDIT</a></td>
-            <td><a href="/delete1/{{$value->id}}">delete</a></td>
+            <td><a href="/delete1/{{$value->id}}">DELETE</a></td>
 
           </tr>
           @endforeach

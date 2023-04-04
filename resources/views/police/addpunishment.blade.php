@@ -10,16 +10,17 @@
         <table class="table table-hover text-nowrap">
           <thead class="bg-warning">
             <tr>
-              <th>id</th>
-              <th>name</th>
-              <th>sof</th>
-              <th>address</th>
-              <th>dob</th>
-              <th>blood group</th>
-              <th>category</th>
-              <th>valid from</th>
-              <th>valid to</th>
-              <th>Add Punishment</th>
+              <th>ID</th>
+              <th>NAME</th>
+              <th>DL NUMBER</th>
+              <th>S/D/W OF</th>
+              <th>ADDRESS</th>
+              <th>DOB</th>
+              <th>BLOOD GROUP</th>
+              <th>CATEGORY</th>
+              <th>VALID FROM</th>
+              <th>VALID TO</th>
+              <th>ADD PUNISHMENT</th>
 
             </tr>
           </thead>
@@ -29,6 +30,8 @@
             <tr>
               <td>{{$value->id}}</td>
               <td>{{$value->username}}</td>
+              <td>{{$value->dlno}}</td>
+              
               <td>{{$value->sof}}</td>
               <td>{{$value->address}}</td>
               <td>{{$value->dob}}</td>
@@ -36,7 +39,7 @@
               <td>{{$value->cat}}</td>
               <td>{{$value->vf}}</td>
               <td>{{$value->vt}}</td>
-              <td><a href="/ppunishment/{{$value->id}}">add</a></td>
+              <td><a href="/ppunishment/{{$value->id}}">ADD</a></td>
 
             </tr>
             @endforeach

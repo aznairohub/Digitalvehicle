@@ -9,11 +9,11 @@
                 <table class="table table-hover text-nowrap">
                   <thead class="bg-warning">
                     <tr>
-                    <th >id</th>
-                    <th >your name</th>
-                    <th >your email</th>
-                    <th >Subject</th>
-                    <th >message</th>
+                    <th >ID</th>
+                    <th >NAME</th>
+                    <th >EMAIL</th>
+                    <th >SUBJECT</th>
+                    <th >MESSAGE</th>
                 </tr>
                   </thead>
                   <tbody>

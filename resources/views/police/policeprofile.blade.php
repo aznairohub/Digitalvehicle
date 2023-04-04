@@ -7,16 +7,16 @@
             @csrf
             <div class="row ">
                 <div class="col-md-12">
-                    <label>Username</label>
+                    <label>USERNAME</label>
                     <input type="text" class="form-control border-0 bg-light px-4" value="{{$value->username}}"value="username"><br>
                 </div>
                 <div class="col-md-12">
-                    <label>password</label>
+                    <label>PASSWORD</label>
                     <input type="text" class="form-control border-0 bg-light px-4" value="{{$value->password}}" name="password"><br>
                 </div>
                 
                 <div class="col-12">
-                    <button class="btn btn-primary w-100 py-3" type="submit">update</button>
+                    <button class="btn btn-primary w-100 py-3" type="submit">UPDATE</button>
                 </div>
             </div>
         </form>
