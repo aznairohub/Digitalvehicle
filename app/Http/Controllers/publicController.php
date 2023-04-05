@@ -97,10 +97,28 @@ class publicController extends Controller
         $data=[
             'dlid'=>$id,
             'userid'=>$userid,
-            'proof'=>$licenece
+            'proof'=>$filename
         ];
         savelicenece::insert($data);
         return redirect('/viewdetails');
 
+    }
+    public function viewdetails()
+    {
+        $userid=session('sess');
+        $data['result']=savelicenece::join('addlisences','addlisences.id','=','saveliceneces.dlid')
+        ->where('saveliceneces.userid',$userid)
+        ->where('saveliceneces.status',"verified")
+        ->get();
+        if($data!="")
+        {
+            return redirect('/public')->with('jsAlert', 'No saved Data/ Not Verifield');
+            
+        }
+        else{
+            return view('public.saved',$data);
+        }
+
+        
     }
 }
