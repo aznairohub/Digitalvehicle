@@ -12,8 +12,6 @@
                     <th >ID</th>
                     <th >PUNISHMENT</th>
                     <th >REASON</th>
-                <th >EDIT</th>
-                <th >DELETE</th>
 
                 </tr>
                   </thead>
@@ -24,8 +22,6 @@
                     <td>{{$value->id}}</td>
                     <td>{{$value->first}}</td>
                     <td>{{$value->second}}</td>
-                <td><a href="/editpunishment/{{$value->id}}">EDIT</a></td>
-                <td><a href="/deletepunishment/{{$value->id}}">DELETE</a></td>
 
                     </tr>
                     @endforeach

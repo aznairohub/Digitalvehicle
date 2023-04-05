@@ -8,14 +8,23 @@ use App\Models\msg;
 use App\Models\policereg;
 use App\Models\punishment;
 use App\Models\registration;
+use App\Models\savelicenece;
 use Illuminate\Http\Request;
 
 class adminController extends Controller
 {
 
+    public function login()
+    {
+      return view('admin.adminlogin');
+    }
     public function index()
     {
-        return view('admin.index');
+        $data['licenece']=addlisence::count();
+        $data['police']=policereg::count();
+        $data['user']=registration::count();
+        $data['rcbook']=addrcbook::count();
+        return view('admin.index',$data);
     }
     public function addrcbook()
     {

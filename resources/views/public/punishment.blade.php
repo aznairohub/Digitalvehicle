@@ -1,5 +1,5 @@
-@extends('police.police_header')
-@section('police_body')
+@extends('public.public_header')
+@section('user-body')
 <section class="py-3">
     <div class="row">
         <div class="col-3"></div>
@@ -7,7 +7,7 @@
             <form id="search">
                 @csrf
                 <div class="row">
-                    <label>Search Licenece</label>
+                    <label>Search Punishments</label>
                     <div class="col-sm-8"> <input type="text" name="query" id="query" class="form-control" placeholder="Enter DL Number"></div>
                     <div class="col-sm-3"><button type="submit" class="btn btn-primary " id="search-btn">Search</button></div>
                 </div>
@@ -43,7 +43,7 @@
                 $('#search-btn').prop('disabled', true);
                 // alert(query)
                 $.ajax({
-                    url: '/usersearchlicence',
+                    url: '/searchpunishment',
                     method: 'get',
                     data: {
                         query: query
@@ -51,14 +51,14 @@
                     success: function(response) {
 
                         updateTable(response);
-                        // window.reload();
+                        window.reload();
                     },
                     error: function(xhr) {
                         console.log(xhr.responseText);
                     },
 
                 });
-                // window.reload();
+                window.reload();
 
             });
 
@@ -68,38 +68,22 @@
                 table.find('#tbody').empty();
                 // table.find('#thead').empty();
                 if (records != "") {
-                    $.each(records, function(index, record) {
-                        var row1=$('<tr></tr>');
-                        row1.append($('<th></th>').text("ID"));
-                        row1.append($('<th></th>').text("USERNAME"));
-                        row1.append($('<th></th>').text("DRIVING LICENCE NUMBER"));
-                        row1.append($('<th></th>').text("S/D/W OF"));
-                        row1.append($('<th></th>').text('ADDRESS'));
-                        row1.append($('<th></th>').text('DATE OF BIRTH'));
-                        row1.append($('<th></th>').text('BLOOD GROUP'));
-                        row1.append($('<th></th>').text('CATEGORY'));
-                        row1.append($('<th></th>').text('VALID FROM'));
-                        row1.append($('<th></th>').text('VALID TO'));
-                        row1.append($('<th></th>').text('ADD PUNNISHMENT'));
-                        // row.append($('<th></th>').text(record.save));
+                    var row1=$('<tr></tr>');
+                        row1.append($('<th></th>').text("REASON"));
+                        row1.append($('<th></th>').text("DESCRIPTION"));
+                        row1.append($('<th></th>').text("STATUS"));
                         table.append(row1);
-                        var id=record.id
+                    $.each(records, function(index, record) {
+                        
                         var row = $('<tr></tr>');
-                        row.append($('<td></td>').text(record.id));
-                        row.append($('<td></td>').text(record.username));
-                        row.append($('<td></td>').text(record.dlno));
-                        row.append($('<td></td>').text(record.sof));
-                        row.append($('<td></td>').text(record.address));
-                        row.append($('<td></td>').text(record.dob));
-                        row.append($('<td></td>').text(record.bg));
-                        row.append($('<td></td>').text(record.cat));
-                        row.append($('<td></td>').text(record.vf));
-                        row.append($('<td></td>').text(record.vt));
-                        row.append($('<td></td>').html("<a href=/ppunishment/"+id+" class='btn btn-primary'>add</a>"));
+                        row.append($('<td></td>').text(record.first));
+                        row.append($('<td></td>').text(record.second));
+                        row.append($('<td></td>').text(record.status));
+                        // row.append($('<td></td>').text());
                         table.append(row);
                     });
                 } else {
-                    window.alert("not found")
+                    window.alert("not punishments")
                     $('#search-btn').prop('disabled', false);
                     $('#query').val('');
                 }
@@ -108,6 +92,3 @@
     </div>
 </section>
 @endsection
-              <td></td>
-
-           

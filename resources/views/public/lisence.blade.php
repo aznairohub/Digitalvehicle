@@ -8,7 +8,7 @@
                 @csrf
                 <div class="row">
                     <label>Search Licenece</label>
-                    <div class="col-sm-8"> <input type="text" name="query" class="form-control" placeholder="Enter DL Number"></div>
+                    <div class="col-sm-8"> <input type="text" name="query" id="query" class="form-control" placeholder="Enter DL Number"></div>
                     <div class="col-sm-3"><button type="submit" class="btn btn-primary " id="search-btn">Search</button></div>
                 </div>
             </form>
@@ -19,17 +19,7 @@
                 <thead class=bg-warning>
 
                     <tr>
-                        <th>ID</th>
-                        <th>NAME</th>
-                        <th>DL NUMBER</th>
-                        <th>S/D/W OF</th>
-                        <th>ADDRESS</th>
-                        <th>DOB</th>
-                        <th>BLOOD GROUP</th>
-                        <th>CATEGORY</th>
-                        <th>VALID FROM</th>
-                        <th>VALID TO</th>
-                        <th>ADD PUNISHMENT</th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -41,7 +31,9 @@
                 </tbody>
 
             </table>
+            <p id=save>
 
+            </p>
         </div>
         <script src="https://code.jquery.com/jquery-latest.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -73,11 +65,26 @@
             });
 
             function updateTable(records) {
+                var save = $('#save');
 
                 var table = $('#table');
                 table.find('#tbody').empty();
+                // table.find('#thead').empty();
                 if (records != "") {
                     $.each(records, function(index, record) {
+                        var row1 = $('<tr></tr>');
+                        row1.append($('<th></th>').text("ID"));
+                        row1.append($('<th></th>').text("USERNAME"));
+                        row1.append($('<th></th>').text("DRIVING LICENCE NUMBER"));
+                        row1.append($('<th></th>').text("S/D/W OF"));
+                        row1.append($('<th></th>').text('ADDRESS'));
+                        row1.append($('<th></th>').text('DATE OF BIRTH'));
+                        row1.append($('<th></th>').text('BLOOD GROUP'));
+                        row1.append($('<th></th>').text('CATEGORY'));
+                        row1.append($('<th></th>').text('VALID FROM'));
+                        row1.append($('<th></th>').text('VALID TO'));
+                        // row.append($('<th></th>').text(record.save));
+                        table.append(row1);
                         var row = $('<tr></tr>');
                         row.append($('<td></td>').text(record.id));
                         row.append($('<td></td>').text(record.username));
@@ -89,12 +96,15 @@
                         row.append($('<td></td>').text(record.cat));
                         row.append($('<td></td>').text(record.vf));
                         row.append($('<td></td>').text(record.vt));
-                        row.append($('<td></td>').text(record.save));
+                        // row.append($('<td></td>').text());
                         table.append(row);
+                        var id = record.id;
+                        save.append($('<div></div>').html("<a href=/savelicenece/" + id + " class='btn btn-primary'>save</a>"));
                     });
                 } else {
                     window.alert("not found")
                     $('#search-btn').prop('disabled', false);
+                    $('#query').val('');
                 }
             }
         </script>

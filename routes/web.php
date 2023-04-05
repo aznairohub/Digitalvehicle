@@ -34,7 +34,8 @@ Route::post('/userloginaction',[indexcontroller::class,'userloginaction']);
 
 
 
-Route::get('/admin',[adminController::class,'index']);
+Route::get('/admin',[adminController::class,'login']);
+Route::get('/adminindex',[adminController::class,'index']);
 Route::get('/addrcbook',[adminController::class,'addrcbook']);
 Route::post('/addrcbookaction',[adminController::class,'addrcbookaction']);
 Route::get('/viewrcbook',[adminController::class,'viewrcbook']);
@@ -77,12 +78,16 @@ Route::get('/policeprofile',[policeController::class,'policeprofile']);
 
 
 Route::get('/public',[publicController::class,'user']);
-Route::get('/rcbook',[publicController::class,'rcbook']);
+Route::get('/punishment',[publicController::class,'punishment']);
+
+Route::get('/userrcbook',[publicController::class,'rcbook']);
 Route::get('/lisence',[publicController::class,'lisence']);
 Route::get('/usersearchlicence',[publicController::class,'usersearchlicence']);
-Route::get('/punishment',[publicController::class,'punishment']);
+Route::get('/usersearchrcbook',[publicController::class,'usersearchrcbook']);
+Route::get('/searchpunishment',[publicController::class,'searchpunishment']);
 Route::get('/myprofile',[publicController::class,'myprofile']);
-
+Route::get('/savelicenece/{id}',[publicController::class,'savelicenece']);
+Route::post('/saveliceneceaction/{id}',[publicController::class,'saveliceneceaction']);
 
 
 

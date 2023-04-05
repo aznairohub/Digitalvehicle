@@ -15,7 +15,7 @@
                     <form action="/userloginaction" method="post" >
                         @csrf
                         <div class="card-body" >
-                            <div class="form-group">
+                            <di  v class="form-group">
                             <label for="username" >USER NAME:</label>
                             <input type="text" name="username" id="username"  class="form-control">
                             </div>
@@ -27,7 +27,7 @@
                         </div>
 
                         <div class="card-footer" >
-                        <button type="submit" name="register" class="btn btn-block btn-primary w-100" id="register">Register</button>
+                        <button type="submit" name="register" class="btn btn-block btn-primary w-100" id="register">LOGIN</button>
                         </div>
                         
                     </form>
