@@ -8,6 +8,7 @@ use App\Models\addlisence;
 use App\Models\addrcbook;
 use Illuminate\Http\Request;
 use App\Models\savelicenece;
+use App\Models\savercbook;
 
 class publicController extends Controller
 {
@@ -88,37 +89,90 @@ class publicController extends Controller
     }
     public function saveliceneceaction(Request $req, $id)
     {
-        $userid=session('sess');
+        $userid = session('sess');
         $licenece = $req->file('proof');
         // echo $pimage;
         // exit();
         $filename = $licenece->getClientOriginalName();
         $licenece->move(public_path() . '/licenece/', $filename);
-        $data=[
-            'dlid'=>$id,
-            'userid'=>$userid,
-            'proof'=>$filename
+        $data = [
+            'dlid' => $id,
+            'userid' => $userid,
+            'proof' => $filename
         ];
         savelicenece::insert($data);
         return redirect('/viewdetails');
-
+    }
+    public function savercbook($id)
+    {
+        $data['rcbook'] = addrcbook::where('id', $id)->get();
+        return view('public.savercbook', $data);
+    }
+    public function savercbookaction(Request $req, $id)
+    {
+        $userid = session('sess');
+        $rcbook = $req->file('proof');
+        // echo $pimage;
+        // exit();
+        $filename = $rcbook->getClientOriginalName();
+        $rcbook->move(public_path() . '/rcbook/', $filename);
+        $data = [
+            'dlid' => $id,
+            'userid' => $userid,
+            'proof' => $filename
+        ];
+        savercbook::insert($data);
+        return redirect('/viewdetails');
     }
     public function viewdetails()
     {
-        $userid=session('sess');
-        $data['result']=savelicenece::join('addlisences','addlisences.id','=','saveliceneces.dlid')
-        ->where('saveliceneces.userid',$userid)
-        ->where('saveliceneces.status',"verified")
-        ->get();
-        if($data!="")
-        {
-            return redirect('/public')->with('jsAlert', 'No saved Data/ Not Verifield');
-            
-        }
-        else{
-            return view('public.saved',$data);
-        }
+        $userid = session('sess');
+        $data['result'] = savelicenece::join('addlisences', 'addlisences.id', '=', 'saveliceneces.dlid')
+            ->join('punishments', 'punishments.dlid', '=', 'addlisences.id')
+            ->where('saveliceneces.userid', $userid)
+            ->where('saveliceneces.status', "verified")
+            ->select(
+                'saveliceneces.id',
+                'saveliceneces.proof',
+                // 'addlisences.id',
+                'addlisences.username',
+                'addlisences.dlno',
+                'addlisences.sof',
+                'addlisences.address',
+                'addlisences.dob',
+                'addlisences.bg',
+                'addlisences.vf',
+                'addlisences.vt',
+                'addlisences.cat',
+                'punishments.first',
+                'punishments.second',
+                'punishments.status'
+            )
+            ->get();
+        $data['rc'] = savercbook::join('addrcbooks', 'addrcbooks.id', '=', 'savercbooks.dlid')
+            ->where('savercbooks.userid', $userid)
+            ->where('savercbooks.status', "verified")
+            ->select(
+                'savercbooks.id',
+                'savercbooks.proof',
+                // 'addrcbooks.id',
+                'addrcbooks.name',
+                'addrcbooks.rto',
+                'addrcbooks.model',
+                'addrcbooks.class',
+                'addrcbooks.fuel',
+                'addrcbooks.eno',
+                'addrcbooks.cno',
+                'addrcbooks.regdate',
+                'addrcbooks.fit',
+                'addrcbooks.expiry',
+                'addrcbooks.regnumber',
+                'addrcbooks.color',
+                'addrcbooks.unload',
+                'savercbooks.status'
+            )
+            ->get();
 
-        
+        return view('public.saved', $data);
     }
 }

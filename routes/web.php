@@ -89,6 +89,8 @@ Route::get('/myprofile',[publicController::class,'myprofile']);
 Route::get('/savelicenece/{id}',[publicController::class,'savelicenece']);
 Route::get('/viewdetails',[publicController::class,'viewdetails']);
 Route::post('/saveliceneceaction/{id}',[publicController::class,'saveliceneceaction']);
+Route::get('/savercbook/{id}',[publicController::class,'savercbook']);
+Route::post('/savercbookaction/{id}',[publicController::class,'savercbookaction']);
 
 
 
