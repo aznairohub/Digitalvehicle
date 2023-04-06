@@ -1,6 +1,14 @@
 @extends('public.public_header')
 @section('user-body')
 <section class="py-3">
+@if(Session('jsAlert'))
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+
+<strong>Alert !</strong> {{ session('jsAlert') }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  @endif
+</div>
+
     <div class="row">
         <div class="col-3"></div>
         <div class="col-md-8">

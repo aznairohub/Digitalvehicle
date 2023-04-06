@@ -9,6 +9,7 @@ use App\Models\policereg;
 use App\Models\punishment;
 use App\Models\registration;
 use App\Models\savelicenece;
+use App\Models\savercbook;
 use Illuminate\Http\Request;
 
 class adminController extends Controller
@@ -16,15 +17,15 @@ class adminController extends Controller
 
     public function login()
     {
-      return view('admin.adminlogin');
+        return view('admin.adminlogin');
     }
     public function index()
     {
-        $data['licenece']=addlisence::count();
-        $data['police']=policereg::count();
-        $data['user']=registration::count();
-        $data['rcbook']=addrcbook::count();
-        return view('admin.index',$data);
+        $data['licenece'] = addlisence::count();
+        $data['police'] = policereg::count();
+        $data['user'] = registration::count();
+        $data['rcbook'] = addrcbook::count();
+        return view('admin.index', $data);
     }
     public function addrcbook()
     {
@@ -106,7 +107,7 @@ class adminController extends Controller
         $vt = $req->input('vt');
         $data = [
             'username' => $username,
-             'dlno' => $dlno,
+            'dlno' => $dlno,
             'sof' => $sof,
             'address' => $address,
             'dob' => $dob,
@@ -254,5 +255,73 @@ class adminController extends Controller
     {
         return view('admin.adminlogin');
     }
+    public function verifylicenece()
+    {
+        $data['licence'] = savelicenece::join('addlisences', 'addlisences.id', '=', 'saveliceneces.dlid')
+            ->select(
+                'saveliceneces.id',
+                'saveliceneces.proof',
+                'saveliceneces.status',
+                'saveliceneces.userid',
+                // 'addlisences.id',
+                'addlisences.username',
+                'addlisences.dlno',
+                'addlisences.sof',
+                'addlisences.address',
+                'addlisences.dob',
+                'addlisences.bg',
+                'addlisences.vf',
+                'addlisences.vt',
+                'addlisences.cat'
+            )->get();
 
+        return view('admin.verifylicenece', $data);
+    }
+    public function verifyrcbook()
+    {
+        $data['rcbook'] = savercbook::join('addrcbooks', 'addrcbooks.id', '=', 'savercbooks.dlid')
+            ->select(
+                'savercbooks.id',
+                'savercbooks.proof',
+                'savercbooks.userid',
+                // 'addrcbooks.id',
+                'addrcbooks.name',
+                'addrcbooks.rto',
+                'addrcbooks.model',
+                'addrcbooks.class',
+                'addrcbooks.fuel',
+                'addrcbooks.eno',
+                'addrcbooks.cno',
+                'addrcbooks.regdate',
+                'addrcbooks.fit',
+                'addrcbooks.expiry',
+                'addrcbooks.regnumber',
+                'addrcbooks.color',
+                'addrcbooks.unload',
+                'savercbooks.status'
+            )
+            ->get();
+            return view('admin.verifyrcbook', $data);
+    }
+    public function verifiedrcbook($id)
+    {
+        $data=[
+            'status'=>'verified'
+        ];
+        savercbook::where('id',$id)->update($data);
+        return redirect('/verifyrcbook');
+    }
+    public function verifiedlicenece($id)
+    {
+        $data=[
+            'status'=>'verified'
+        ];
+        savelicenece::where('id',$id)->update($data);
+        return redirect('/verifylicenece');
+    }
+    public function view($id)
+    {
+        $data['result']=registration::where('id',$id)->get();
+        return view('admin.view',$data);
+    }
 }

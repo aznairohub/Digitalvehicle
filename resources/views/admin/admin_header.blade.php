@@ -97,7 +97,7 @@
                 <p>
                   RC BOOK DETAILS
                   <i class="fas fa-angle-left right"></i>
-                  
+
                 </p>
               </a>
               <ul class="nav nav-treeview">
@@ -145,23 +145,23 @@
                 <p>
                   VERIFICATION DOCUMNETS
                   <i class="fas fa-angle-left right"></i>
-                  
+
                 </p>
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="addrcbook" class="nav-link">
+                  <a href="/verifyrcbook" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>RC BOOK</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="viewrcbook" class="nav-link">
+                  <a href="/verifylicenece" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>LISECNCE</p>
 
 
-                    
+
                   </a>
                 </li>
               </ul>
@@ -200,7 +200,7 @@
               </a>
               <ul class="nav nav-treeview">
 
-              <li class="nav-item">
+                <li class="nav-item">
                   <a href="/viewreg" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>VIEW USERS</p>
@@ -216,7 +216,7 @@
               </ul>
 
             </li>
-          
+
             <li class="nav-item">
               <a href="viewprofile" class="nav-link">
                 <i class="nav-icon fas fa-tree"></i>
@@ -226,7 +226,7 @@
                 </p>
               </a>
             </li>
-            
+
             <li class="nav-item">
               <a href="punishmentview" class="nav-link">
                 <i class="nav-icon fas fa-tree"></i>
@@ -255,7 +255,7 @@
 
     @yield('admin_body')
 
-    
+
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
       <!-- Control sidebar content goes here -->

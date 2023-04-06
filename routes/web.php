@@ -59,6 +59,11 @@ Route::post('/addpoliceaction',[adminController::class,'addpoliceaction']);
 Route::get('/viewpolice',[adminController::class,'viewpolice']);
 Route::get('/adminlogin',[adminController::class,'adminlogin']);
 Route::post('/adminloginaction',[adminController::class,'adminloginaction']);
+Route::get('/verifylicenece',[adminController::class,'verifylicenece']);
+Route::get('/verifyrcbook',[adminController::class,'verifyrcbook']);
+Route::get('/verifiedrcbook/{id}',[adminController::class,'verifiedrcbook']);
+Route::get('/verifiedlicenece/{id}',[adminController::class,'verifiedlicenece']);
+Route::get('/view/{id}',[adminController::class,'view']);
 
 
 Route::get('/police',[policeController::class,'index']);

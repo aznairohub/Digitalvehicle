@@ -84,8 +84,16 @@ class publicController extends Controller
     }
     public function savelicenece($id)
     {
-        $data['license'] = addlisence::where('id', $id)->get();
-        return view('public.savelicenece', $data);
+        $userid = session('sess');
+        $dlid = savelicenece::where('userid', $userid)->where('dlid', $id)->value('dlid');
+        // echo $dlid;
+        // exit();
+        if ($dlid == "") {
+            $data['license'] = addlisence::where('id', $id)->get();
+            return view('public.savelicenece', $data);
+        } else {
+            return redirect('/lisence')->with('jsAlert', 'Already Saved');
+        }
     }
     public function saveliceneceaction(Request $req, $id)
     {
@@ -105,8 +113,16 @@ class publicController extends Controller
     }
     public function savercbook($id)
     {
-        $data['rcbook'] = addrcbook::where('id', $id)->get();
-        return view('public.savercbook', $data);
+        $userid = session('sess');
+        $dlid = savercbook::where('userid', $userid)->where('dlid', $id)->value('dlid');
+        // echo $dlid;
+        // exit();
+        if ($dlid == "") {
+            $data['rcbook'] = addrcbook::where('id', $id)->get();
+            return view('public.savercbook', $data);
+        } else {
+            return redirect('/lisence')->with('jsAlert', 'Already Saved');
+        }
     }
     public function savercbookaction(Request $req, $id)
     {
