@@ -37,44 +37,34 @@
     </div>
 
     <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand bg-primary">
-      <ul class="nav" >
-        <li class="nav-item">
-          <h2 >Digital Vehicle</h2>
-        </li>
-      </ul>
-    </nav>
+
 
 
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <a href="/policeindex" class="brand-link py-3" >
+    <h3 class="brand-text font-weight-bolder">DIGITAL VEHICLE</h3>
+        <img src="/dist/img/policelogo.jpg" alt="Police Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      
+        <span class="brand-text font-weight-light">POLICE</span>
+      </a>
       <div class="sidebar">
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item menu-open">
-              <a href="#" class="nav-link active">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
+              <a href="/policeindex" class="nav-link active">
+                <i class="nav-icon fas fa-home"></i>
                 <p>
-                  Dashboard
-                  <i class="right fas fa-angle-left"></i>
+                  Home
                 </p>
               </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="/police" class="nav-link active">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Dashboard v1</p>
-                  </a>
-                </li>
-              </ul>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-copy"></i>
+                <i class="nav-icon fas fa-user"></i>
                 <p>
                   PUNISHMENT
-
-
+                  <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
               <ul class="nav nav-treeview">
@@ -96,7 +86,7 @@
             <li class="nav-item">
             <li class="nav-item">
               <a href="/viewrdetails" class="nav-link">
-                <i class="nav-icon fas fa-edit"></i>
+                <i class="nav-icon fas fa-book"></i>
                 <p>
                   VIEW RC BOOK
 
@@ -105,7 +95,7 @@
             </li>
             <li class="nav-item">
               <a href="/viewldetails" class="nav-link">
-                <i class="nav-icon fas fa-edit"></i>
+                <i class="nav-icon fas fa-book"></i>
                 <p>
                   VIEW LISENCE
 
@@ -114,7 +104,7 @@
             </li>
             <li class="nav-item">
               <a href="/policeprofile" class="nav-link">
-                <i class="nav-icon fas fa-edit"></i>
+                <i class="nav-icon fas fa-user"></i>
                 <p>
                   VIEW PROFILE
 
@@ -123,9 +113,9 @@
             </li>
             <li class="nav-item">
               <a href="/logout" class="nav-link">
-                <i class="nav-icon fas fa-edit"></i>
+                <i class="nav-icon fas fa-circle"></i>
                 <p>
-                 Logout
+                  Logout
                 </p>
               </a>
             </li>

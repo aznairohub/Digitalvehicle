@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 03, 2023 at 09:58 AM
+-- Generation Time: Apr 10, 2023 at 12:17 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -42,14 +42,6 @@ CREATE TABLE `addlisences` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `addlisences`
---
-
-INSERT INTO `addlisences` (`id`, `username`, `sof`, `address`, `dob`, `bg`, `cat`, `vf`, `vt`, `dlno`, `created_at`, `updated_at`) VALUES
-(1, 'azna', 'muneer', 'sadasdsa', '2000-09-12', 'o+ve', 'dwsefdsf', '42323-02-23', '3232-02-23', '1234', NULL, NULL),
-(2, '2323', '343433', '3434', '43432-03-31', '34234', '34234', '2322-02-12', '2333-03-12', '24343', NULL, NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -76,13 +68,26 @@ CREATE TABLE `addrcbooks` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `addrcbooks`
+-- Table structure for table `admins`
 --
 
-INSERT INTO `addrcbooks` (`id`, `name`, `rto`, `model`, `class`, `fuel`, `eno`, `cno`, `regdate`, `fit`, `expiry`, `expin`, `regnumber`, `color`, `unload`, `created_at`, `updated_at`) VALUES
-(1, 'azna', 'kl07', '123', '2', 'petrol', '2324355', '3453454', '2020-04-12', '2045-05-12', '2023-03-12', '2024-03-12', '123456789', 'black', '2', NULL, NULL),
-(2, 'krish', 'kl07', 'qwerty', 'qwerty', 'qwerty', '234234', '34334', '2222-03-31', '1222-02-23', '1323-02-23', '0032-02-23', '232313', '232312', '23234', NULL, NULL);
+CREATE TABLE `admins` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `admins`
+--
+
+INSERT INTO `admins` (`id`, `username`, `password`, `created_at`, `updated_at`) VALUES
+(1, 'admin', 'admin', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -117,16 +122,19 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(31, '2014_10_12_000000_create_users_table', 1),
-(32, '2014_10_12_100000_create_password_resets_table', 1),
-(33, '2019_08_19_000000_create_failed_jobs_table', 1),
-(34, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(35, '2023_03_14_093811_create_addrcbooks_table', 1),
-(36, '2023_03_17_093704_create_addlisences_table', 1),
-(37, '2023_03_21_110029_create_msgs_table', 1),
-(47, '2023_03_23_094059_create_registrations_table', 2),
-(48, '2023_03_28_102558_create_punishments_table', 2),
-(49, '2023_03_29_091704_create_policeregs_table', 2);
+(1, '2014_10_12_000000_create_users_table', 1),
+(2, '2014_10_12_100000_create_password_resets_table', 1),
+(3, '2019_08_19_000000_create_failed_jobs_table', 1),
+(4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(5, '2023_03_14_093811_create_addrcbooks_table', 1),
+(6, '2023_03_17_093704_create_addlisences_table', 1),
+(7, '2023_03_21_110029_create_msgs_table', 1),
+(8, '2023_03_23_094059_create_registrations_table', 1),
+(9, '2023_03_28_102558_create_punishments_table', 1),
+(10, '2023_03_29_091704_create_policeregs_table', 1),
+(11, '2023_04_05_035321_create_saveliceneces_table', 1),
+(12, '2023_04_05_095221_create_savercbooks_table', 1),
+(13, '2023_04_10_030813_create_admins_table', 1);
 
 -- --------------------------------------------------------
 
@@ -206,13 +214,6 @@ CREATE TABLE `punishments` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `punishments`
---
-
-INSERT INTO `punishments` (`id`, `dlid`, `first`, `second`, `status`, `created_at`, `updated_at`) VALUES
-(1, '1', '\'Not Completed\'', '\'Not Completed\'', 'Not Completed', NULL, NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -233,12 +234,37 @@ CREATE TABLE `registrations` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `registrations`
+-- Table structure for table `saveliceneces`
 --
 
-INSERT INTO `registrations` (`id`, `name`, `address`, `dob`, `bg`, `hgt`, `wgt`, `username`, `psd`, `created_at`, `updated_at`) VALUES
-(1, 'azna', 'aaaaa', '2000-04-12', 'O+ve', '156', '49', 'azna', 'azna', NULL, NULL);
+CREATE TABLE `saveliceneces` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `dlid` varchar(255) NOT NULL,
+  `userid` varchar(255) NOT NULL,
+  `proof` varchar(255) NOT NULL,
+  `status` varchar(255) NOT NULL DEFAULT 'Not Verified',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `savercbooks`
+--
+
+CREATE TABLE `savercbooks` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `dlid` varchar(255) NOT NULL,
+  `userid` varchar(255) NOT NULL,
+  `proof` varchar(255) NOT NULL,
+  `status` varchar(255) NOT NULL DEFAULT 'Not Verified',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -271,6 +297,12 @@ ALTER TABLE `addlisences`
 -- Indexes for table `addrcbooks`
 --
 ALTER TABLE `addrcbooks`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `admins`
+--
+ALTER TABLE `admins`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -325,6 +357,18 @@ ALTER TABLE `registrations`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `saveliceneces`
+--
+ALTER TABLE `saveliceneces`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `savercbooks`
+--
+ALTER TABLE `savercbooks`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -339,13 +383,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `addlisences`
 --
 ALTER TABLE `addlisences`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `addrcbooks`
 --
 ALTER TABLE `addrcbooks`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `admins`
+--
+ALTER TABLE `admins`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -357,7 +407,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `msgs`
@@ -381,13 +431,25 @@ ALTER TABLE `policeregs`
 -- AUTO_INCREMENT for table `punishments`
 --
 ALTER TABLE `punishments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `registrations`
 --
 ALTER TABLE `registrations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `saveliceneces`
+--
+ALTER TABLE `saveliceneces`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `savercbooks`
+--
+ALTER TABLE `savercbooks`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`

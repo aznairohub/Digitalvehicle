@@ -3,7 +3,9 @@
 <div class="row">
   <div class="col-2"></div>
   <div class="col-md-10">
-
+  <div class="card-header bg-danger text-dark">
+            <h3 class="card-title">VIEW PUBLICS</h3>
+        </div>
     <!-- /.card-header -->
     <div class="card-body table-responsive p-0">
       <table class="table table-hover text-nowrap">
@@ -17,8 +19,7 @@
             <th>HEIGHT</th>
             <th>WEIGHT</th>
             <th>USERNAME</th>
-            <th>EDIT</th>
-            <th>DELETE</th>
+            <th>PASSWORD</th>
           </tr>
         </thead>
         <tbody>
@@ -34,8 +35,6 @@
             <td>{{$value->username}}</td>
             <td>{{$value->psd}}</td>
 
-            <td><a href="/editlisence/{{$value->id}}">EDIT</a></td>
-            <td><a href="/delete1/{{$value->id}}">DELETE</a></td>
 
           </tr>
           @endforeach

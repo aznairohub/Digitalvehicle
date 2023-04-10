@@ -109,5 +109,10 @@ else
 return redirect('/userlogin')->with('error', 'invalid  username or Password');
 }
 }
+public function logout(Request $req)
+{
+     $req->session()->forget('sess');
+     return redirect('/');
+}
 
 }

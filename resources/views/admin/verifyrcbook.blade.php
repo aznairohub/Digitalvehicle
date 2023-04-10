@@ -3,7 +3,9 @@
 <div class="row py-5">
     <div class="col-2"></div>
     <div class="col-md-10">
-
+    <div class="card-header bg-danger text-dark">
+            <h3 class="card-title">VERIFY RC BOOK</h3>
+        </div>
         <!-- /.card-header -->
         <div class="card-body table-responsive p-0">
             <table class="table table-hover text-nowrap">
@@ -26,7 +28,6 @@
                         <th>UNLOAD</th>
                         <th>DOCUMENT</th>
                         <th>STATUS</th>
-                        <th>VERIFICATION</th>
 
 
 
@@ -53,7 +54,7 @@
                         <td>{{$value->unload}}</td>
                         <td><a href="/rcbook/{{$value->proof}}">{{$value->proof}}</a></td>
                         <td>{{$value->status}}</td>
-                        <td><a href="/verifiedrcbook/{{$value->id}}">VERIFY</a></td>
+                        <td>@if($value->status=="verified")<h1></h1>@else<a href="/verifiedrcbook/{{$value->id}}">VERIFY</a>@endif</td>
 
                     </tr>
                     @endforeach

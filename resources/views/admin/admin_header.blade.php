@@ -54,7 +54,7 @@
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
-      <a href="/admin" class="brand-link">
+      <a href="/adminindex" class="brand-link">
         <img src="/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">Admin</span>
       </a>
@@ -72,44 +72,33 @@
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
             <li class="nav-item menu-open">
-              <a href="#" class="nav-link active">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
+              <a href="/adminindex" class="nav-link ">
+                <i class="nav-icon fas fa-home"></i>
                 <p>
                   Dashboard
+                </p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-book"></i>
+                <p>
+                  RC BOOK DETAILS
+
                   <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="/adminindex" class="nav-link active">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Dashboard v1</p>
-                  </a>
-                </li>
-
-
-              </ul>
-            </li>
-
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-copy"></i>
-                <p>
-                  RC BOOK DETAILS
-                  <i class="fas fa-angle-left right"></i>
-
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
                   <a href="addrcbook" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
+                  <i class="nav-icon fas fa-book"></i>
                     <p>ADD RC BOOK DETAILS</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="viewrcbook" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
+                  <i class="nav-icon fas fa-book"></i>
                     <p>VIEW RC BOOK DETAILS</p>
                   </a>
                 </li>
@@ -117,7 +106,7 @@
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-chart-pie"></i>
+                <i class="nav-icon fas fa-book"></i>
                 <p>
                   LISECNCE
                   <i class="right fas fa-angle-left"></i>
@@ -126,13 +115,13 @@
               <ul class="nav nav-treeview">
                 <li class="nav-item">
                   <a href="/addlisence" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
+                  <i class="nav-icon fas fa-book"></i>
                     <p>ADD LISECNCE</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="/viewlisence" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
+                  <i class="nav-icon fas fa-book"></i>
                     <p>VIEW LISECNCE</p>
                   </a>
                 </li>
@@ -144,20 +133,21 @@
                 <i class="nav-icon fas fa-copy"></i>
                 <p>
                   VERIFICATION DOCUMNETS
-                  <i class="fas fa-angle-left right"></i>
+
 
                 </p>
+                <i class="right fas fa-angle-left"></i>
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
                   <a href="/verifyrcbook" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
+                  <i class="nav-icon fas fa-copy"></i>
                     <p>RC BOOK</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="/verifylicenece" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
+                  <i class="nav-icon fas fa-copy"></i>
                     <p>LISECNCE</p>
 
 
@@ -168,7 +158,7 @@
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-chart-pie"></i>
+                <i class="nav-icon fas fa-user"></i>
                 <p>
                   POLICE
                   <i class="right fas fa-angle-left"></i>
@@ -177,13 +167,13 @@
               <ul class="nav nav-treeview">
                 <li class="nav-item">
                   <a href="/addpolice" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
+                  <i class="nav-icon fas fa-user"></i>
                     <p>ADD POLICE</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="/viewpolice" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
+                  <i class="nav-icon fas fa-user"></i>
                     <p>VIEW POLICE</p>
                   </a>
                 </li>
@@ -192,23 +182,23 @@
             </li>
             <li class="nav-item">
               <a href="viewpublics" class="nav-link">
-                <i class="nav-icon fas fa-tree"></i>
+              <i class="nav-icon fas fa-user"></i>
                 <p>
                   VIEW PUBLICS
-                  <i class="fas fa-angle-left right"></i>
+
                 </p>
               </a>
               <ul class="nav nav-treeview">
 
                 <li class="nav-item">
                   <a href="/viewreg" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
+                  <i class="nav-icon fas fa-user"></i>
                     <p>VIEW USERS</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="/viewcontact" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
+                  <i class="nav-icon fas fa-user"></i>
                     <p>VIEW CONTACT</p>
                   </a>
                 </li>
@@ -219,29 +209,29 @@
 
             <li class="nav-item">
               <a href="viewprofile" class="nav-link">
-                <i class="nav-icon fas fa-tree"></i>
+              <i class="nav-icon fas fa-user"></i>
                 <p>
                   VIEW PROFILE
-                  <i class="fas fa-angle-left right"></i>
+
                 </p>
               </a>
             </li>
 
             <li class="nav-item">
               <a href="punishmentview" class="nav-link">
-                <i class="nav-icon fas fa-tree"></i>
+                <i class="nav-icon fas fa-book"></i>
                 <p>
                   VIEW PUNISHMENT
-                  <i class="fas fa-angle-left right"></i>
+
                 </p>
               </a>
             </li>
             <li class="nav-item">
               <a href="/logout" class="nav-link">
-                <i class="nav-icon fas fa-tree"></i>
+                <i class="nav-icon fas fa-circle"></i>
                 <p>
                   LOGOUT
-                  <i class="fas fa-angle-left right"></i>
+
                 </p>
               </a>
             </li>

@@ -4,9 +4,14 @@
     <div class="row">
         <div class="col-3"></div>
         <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-12 bg-danger p-4">
+                    ADD PUNISHMENT
+                </div>
+            </div>
             <form id="search">
                 @csrf
-                <div class="row">
+                <div class="row  py-3 my-3">
                     <label>Search Licenece</label>
                     <div class="col-sm-8"> <input type="text" name="query" id="query" class="form-control" placeholder="Enter DL Number"></div>
                     <div class="col-sm-3"><button type="submit" class="btn btn-primary " id="search-btn">Search</button></div>
@@ -19,7 +24,7 @@
                 <thead class=bg-warning>
 
                     <tr>
-                        
+
                     </tr>
                 </thead>
                 <tbody>
@@ -69,7 +74,7 @@
                 // table.find('#thead').empty();
                 if (records != "") {
                     $.each(records, function(index, record) {
-                        var row1=$('<tr></tr>');
+                        var row1 = $('<tr></tr>');
                         row1.append($('<th></th>').text("ID"));
                         row1.append($('<th></th>').text("USERNAME"));
                         row1.append($('<th></th>').text("DRIVING LICENCE NUMBER"));
@@ -83,7 +88,7 @@
                         row1.append($('<th></th>').text('ADD PUNNISHMENT'));
                         // row.append($('<th></th>').text(record.save));
                         table.append(row1);
-                        var id=record.id
+                        var id = record.id
                         var row = $('<tr></tr>');
                         row.append($('<td></td>').text(record.id));
                         row.append($('<td></td>').text(record.username));
@@ -95,7 +100,7 @@
                         row.append($('<td></td>').text(record.cat));
                         row.append($('<td></td>').text(record.vf));
                         row.append($('<td></td>').text(record.vt));
-                        row.append($('<td></td>').html("<a href=/ppunishment/"+id+" class='btn btn-primary'>add</a>"));
+                        row.append($('<td></td>').html("<a href=/ppunishment/" + id + " class='btn btn-primary'>add</a>"));
                         table.append(row);
                     });
                 } else {
@@ -108,6 +113,4 @@
     </div>
 </section>
 @endsection
-              <td></td>
-
-           
+<td></td>

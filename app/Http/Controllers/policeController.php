@@ -6,7 +6,6 @@ use App\Models\addlisence;
 use App\Models\addrcbook;
 use App\Models\policereg;
 use App\Models\punishment;
-use App\Models\registration;
 use Illuminate\Http\Request;
 
 class policeController extends Controller
@@ -40,9 +39,9 @@ class policeController extends Controller
 
     public function viewpunishment()
     {
-        $data['result'] = punishment::join('addlisences','addlisences.id','=','punishments.dlid')
-        ->select('addlisences.dlno','addlisences.username','punishments.id','punishments.first','punishments.second','punishments.status')
-        ->get();
+        $data['result'] = punishment::join('addlisences', 'addlisences.id', '=', 'punishments.dlid')
+            ->select('addlisences.dlno', 'addlisences.username', 'punishments.id', 'punishments.first', 'punishments.second', 'punishments.status')
+            ->get();
         return view('police.viewpunishment', $data);
     }
     public function login()
@@ -50,25 +49,22 @@ class policeController extends Controller
         return view('police.login');
     }
 
-    public function ploginaction(Request $req)
+    public function policeloginaction(Request $req)
     {
-        $username = $req->input('username');
+        $email = $req->input('email');
         $password = $req->input('password');
-        echo $username;
-        echo $password;
-        $data = policereg::where('username', $username)->where('password', $password)->first();
-
+        $data = policereg::where('email', $email)->where('password', $password)->first();
         if (isset($data)) {
             $req->session()->put(array('sess' => $data->id));
-            return redirect('/police');
+            return redirect('/policeindex');
         } else {
-            return redirect('/login')->with('error', 'invalid  username or Password');
+            return redirect('/police')->with('error', 'invalid  username or Password');
         }
     }
     public function policeprofile(Request $req)
     {
         $id = session('sess');
-        $data['sess'] = policereg::where('id', $id)->get();
+        $data['result'] = policereg::where('id', $id)->get();
         return view('police.policeprofile', $data);
     }
 
@@ -107,5 +103,31 @@ class policeController extends Controller
             $records = addlisence::where('dlno', 'LIKE', '%' . $licence . '%')->get();
             return response()->json($records);
         }
+    }
+    public function policeprofileaction(Request $req, $id)
+    {
+        $username = $req->input('username');
+        $password = $req->input('password');
+        $email = $req->input('email');
+        $data = [
+            'username' => $username,
+            'password' => $password,
+            'email' => $email,
+
+        ];
+        policereg::where('id',$id)->update($data);
+        return redirect('/policeprofile');
+    }
+    public function changestatus($id)
+    {
+        $data['result']=punishment::where('id',$id)->get();
+        return view('police.changestatus',$data);
+    }
+    public function changestatusaction(Request $req, $id)
+    {
+        $status=$req->input('status');
+        $data=['status'=>$status];
+        punishment::where('id',$id)->update($data);
+        return redirect('/viewpunishment');
     }
 }

@@ -58,6 +58,8 @@
                     data: {
                         query: query
                     },
+
+                    
                     success: function(response) {
 
                         updateTable(response);

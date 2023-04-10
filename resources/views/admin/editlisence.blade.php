@@ -7,7 +7,7 @@
             <div class="col-9">
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">ADD LISECNCE</h3>
+                        <h3 class="card-title">EDIT LISECNCE</h3>
                     </div>
                     @foreach($result as $value)
 

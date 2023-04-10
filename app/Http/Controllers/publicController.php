@@ -16,12 +16,7 @@ class publicController extends Controller
     {
         return view('public.user');
     }
-    public function punishment()
-
-    {
-
-        return view('public.punishment');
-    }
+    
     public function userlogin()
     {
         return view('/userlogin');
@@ -63,16 +58,7 @@ class publicController extends Controller
         return view('public.rcbook');
     }
 
-    public function searchpunishment(Request $req)
-    {
-        $licence = $req->input('query');
-        $dlid = addlisence::where('dlno', $licence)->value('id');
-        if ($licence != " ") {
-
-            $records = punishment::where('dlid', 'LIKE', '%' . $dlid . '%')->get();
-            return response()->json($records);
-        }
-    }
+    
     public function usersearchrcbook(Request $req)
     {
         $licence = $req->input('query');
@@ -190,5 +176,34 @@ class publicController extends Controller
             ->get();
 
         return view('public.saved', $data);
+    }
+    public function updateprofileaction(Request $req, $id)
+    {
+        $name = $req->input('name');
+        $address = $req->input('address');
+        $dob = $req->input('dob');
+        $bg = $req->input('bg');
+        $height = $req->input('hgt');
+        $weight = $req->input('wgt');
+        $username = $req->input('username');
+        $psd = $req->input('psd');
+
+        $data = [
+            'name' => $name,
+            'address' => $address,
+            'dob' => $dob,
+            'bg' => $bg,
+            'hgt' => $height,
+            'wgt' => $weight,
+            'username' => $username,
+            'psd' => $psd
+
+
+
+
+
+        ];
+        registration::where('id',$id)->update($data);
+        return redirect('/myprofile');
     }
 }

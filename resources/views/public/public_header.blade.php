@@ -64,7 +64,6 @@
                     <a href="/user" class="nav-item nav-link active">HOME</a>
                     <a href="/lisence" class="nav-item nav-link">LICENECE</a>
                     <a href="/userrcbook" class="nav-item nav-link">RC BOOK</a>
-                    <a href="/punishment" class="nav-item nav-link">VIEW PUNISHMENTS</a>
                     <a href="/viewdetails" class="nav-item nav-link">SAVED DOCUMENtS</a>
                     <a href="/myprofile" class="nav-item nav-link">MY PROFILE</a>
                     <a href="/logout" class="nav-item nav-link">LOGOUT</a>

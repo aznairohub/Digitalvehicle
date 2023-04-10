@@ -3,9 +3,13 @@
 <div class="row">
   <div class="col-2"></div>
   <div class="col-md-10">
-
+  <div class="row my-5">
+                <div class="col-md-12 bg-danger p-4">
+                    VIEW PUNISHMENTS
+                </div>
+            </div>
     <!-- /.card-header -->
-    <div class="card-body table-responsive p-0">
+    <div class="card-body table-responsive  py-3 my-3">
       <table class="table table-hover text-nowrap">
         <thead>
           <tr>

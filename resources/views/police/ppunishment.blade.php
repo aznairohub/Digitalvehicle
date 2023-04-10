@@ -4,10 +4,15 @@
     <div class="row py-5">
         <div class="col-sm-3"></div>
         <div class="col-sm-8">
+        <div class="row">
+                <div class="col-md-12 bg-danger p-4">
+                    PUNISHMENT
+                </div>
+            </div>
         @foreach($result as $value)
         <form action="/punishmentaction/{{$value->id}}" method="post">
             @csrf
-            <div class="row ">
+            <div class="row py-3 my-3">
                 <div class="col-md-12">
                     <label>Name</label>
                     <input type="text" class="form-control border-0 bg-light px-4" value="{{$value->username}}" readonly><br>

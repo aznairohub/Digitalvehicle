@@ -3,7 +3,9 @@
 <div class="row">
  <div class="col-md-2"></div>
           <div class="col-md-10">
-
+          <div class="card-header bg-danger text-dark">
+            <h3 class="card-title">VIEW POLICE</h3>
+        </div>
               <!-- /.card-header -->
               <div class="card-body table-responsive p-0">
                 <table class="table table-hover text-nowrap">

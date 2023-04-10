@@ -10,6 +10,7 @@ use App\Models\punishment;
 use App\Models\registration;
 use App\Models\savelicenece;
 use App\Models\savercbook;
+use App\Models\admin;
 use Illuminate\Http\Request;
 
 class adminController extends Controller
@@ -31,17 +32,10 @@ class adminController extends Controller
     {
         return view('admin.addrcbook');
     }
-    public function viewpublics()
-    {
-        return view('admin.viewpublics');
-    }
-    public function viewinssurance()
-    {
-        return view('admin.viewinssurance');
-    }
     public function viewprofile()
     {
-        return view('admin.viewprofile');
+        $data['result']=admin::get();
+        return view('admin.viewprofile',$data);
     }
     public function logout()
     {
@@ -225,7 +219,9 @@ class adminController extends Controller
     public function punishmentview()
 
     {
-        $data['result'] = punishment::get();
+        $data['result'] = punishment::join('addlisences', 'addlisences.id', '=', 'punishments.dlid')
+        ->select('addlisences.dlno', 'addlisences.username', 'punishments.id', 'punishments.first', 'punishments.second', 'punishments.status')
+        ->get();
         return view('admin.punishmentview', $data);
     }
     public function addpolice()
@@ -323,5 +319,16 @@ class adminController extends Controller
     {
         $data['result']=registration::where('id',$id)->get();
         return view('admin.view',$data);
+    }
+    public function adminloginaction(Request $req)
+    {
+        $username=$req->input('username');
+        $password=$req->input('password');
+        $data = admin::where('username', $username)->where('password', $password)->first();
+        if (isset($data)) {
+            return redirect('/adminindex');
+        } else {
+            return redirect('/admin')->with('error', 'invalid  username or Password');
+        }
     }
 }

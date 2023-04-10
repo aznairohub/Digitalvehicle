@@ -5,9 +5,14 @@
     <div class="row">
         <div class="col-3"></div>
         <div class="col-md-8">
+        <div class="row">
+                <div class="col-md-12 bg-danger p-4">
+                    VIEW RC BOOK
+                </div>
+            </div>
             <form id="search">
                 @csrf
-                <div class="row">
+                <div class="row py-3 my-3">
                     <label>Search RC...</label>
                     <div class="col-sm-8"> <input type="text" name="query" class="form-control" placeholder="Enter Registration Number"></div>
                     <div class="col-sm-3"><button type="submit" class="btn btn-primary ">Search</button></div>

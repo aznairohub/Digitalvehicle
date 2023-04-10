@@ -7,7 +7,7 @@
       <div class="col-lg-6">
         <div class="card card-primary">
           <div class="card-header">
-            <h3 class="card-title">REGISTRATION</h3>
+            <h3 class="card-title">MY PROFILE</h3>
           </div>
           @foreach($sess as $value)
           <form action="/updateprofileaction/{{$value->id}}" method="post">
@@ -32,23 +32,23 @@
               </div>
               <div class="form-group">
                 <label for="hgt">HEIGHT</label>
-                <input type="text" name="hgt" id="hgt" class="form-control" value="{{$value->dob}}">
+                <input type="text" name="hgt" id="hgt" class="form-control" value="{{$value->hgt}}">
               </div>
               <div class="form-group">
                 <label for="wgt">WEIGHT</label>
-                <input type="text" name="wgt" id="wgt" class="form-control" value="{{$value->hgt}}">
+                <input type="text" name="wgt" id="wgt" class="form-control" value="{{$value->wgt}}">
               </div>
               <div class="form-group">
                 <label for="vt">USERNAME</label>
-                <input type="text" name="username" id="username" class="form-control" value="{{$value->wgt}}">
+                <input type="text" name="username" id="username" class="form-control" value="{{$value->username}}">
               </div>
               <div class="form-group">
                 <label for="psd">PASSWORD</label>
-                <input type="password" name="psd" id="psd" class="form-control" value="{{$value->password}}">
+                <input type="text" name="psd" id="psd" class="form-control" value="{{$value->psd}}">
               </div>
             </div>
             <div class="card-footer">
-              <button type="submit" name="register" class="btn btn-block btn-primary" id="register">Register</button>
+              <button type="submit" name="register" class="btn btn-block btn-primary" id="register">UPDATE MY PROFILE</button>
             </div>
           </form>
           @endforeach
